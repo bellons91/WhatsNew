@@ -1,10 +1,8 @@
-namespace WhatsNew
+namespace WhatsNew.Tests
 {
-    public class O1_TestsRecords
+    public class T01_Records
     {
         public record User(int Id, string Name);
-
-        public record Developer(int Id, string Name, List<string> Skills) : User(Id, Name);
 
         [Test]
         public void Records_set_autoproperties()
@@ -42,6 +40,8 @@ namespace WhatsNew
             Assert.That(anotherMe.Name, Is.EqualTo("Mr Davide"));
             Assert.That(anotherMe.Id, Is.EqualTo(1));
         }
+
+        public record Developer(int Id, string Name, List<string> Skills) : User(Id, Name);
 
         [Test]
         public void Records_can_have_hierarchy()
