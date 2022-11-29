@@ -1,8 +1,54 @@
-﻿namespace WhatsNew.Tests
+﻿using WhatsNew.Tests.Utils;
+
+namespace WhatsNew.Tests
 {
-    public class T02_Pattern_Matching
+    public class T15_Pattern_Matching
     {
         [Test]
+        [DotNet5]
+        public void can_use_keywords()
+        {
+            bool IsLetterOrSeparator(char c) =>
+      c is (>= 'a' and <= 'z') or (>= 'A' and <= 'Z') or '.' or ',';
+
+            Assert.IsTrue(IsLetterOrSeparator('C'));
+            Assert.IsTrue(IsLetterOrSeparator('.'));
+            Assert.IsFalse(IsLetterOrSeparator('9'));
+        }
+
+        [Test]
+        [DotNet5]
+        public void can_use_isnull()
+        {
+            string SelfOrMessage(string s)
+            {
+                if (s is not null) return s;
+                return "error!";
+            }
+
+            Assert.That(SelfOrMessage("CIAO"), Is.EqualTo("CIAO"));
+            Assert.That(SelfOrMessage(null), Is.EqualTo("error!"));
+        }
+
+        [Test]
+        [DotNet7]
+        public void can_use_list_pattern()
+        {
+            string SelfOrMessage(int[] s)
+            {
+                if (s is [1, 2, 3]) return "CIAO";
+                return "error!";
+            }
+
+            Assert.That(SelfOrMessage(new int[] { 1, 2, 3 }), Is.EqualTo("CIAO"));
+            Assert.That(SelfOrMessage(new int[] { 1, 2, 3, 4 }), Is.EqualTo("error!"));
+        }
+    }
+
+    public class T02_Switch_Pattern_Matching
+    {
+        [Test]
+        [DotNetCore3]
         public void switch_accepts_type_in_case_branch()
         {
             string GetMessage(Media media)
@@ -19,6 +65,7 @@
         }
 
         [Test]
+        [DotNetCore3]
         public void switch_can_use_when_clause()
         {
             string GetMessage(Media media)
@@ -37,7 +84,7 @@
         }
 
         [Test]
-        [Description("From C#8")]
+        [DotNetCore3]
         public void switch_accepts_type_in_case_branch_short_syntax()
         {
             string GetMessage(Media media)
@@ -54,6 +101,7 @@
         }
 
         [Test]
+        [DotNetCore3]
         public void switch_with_filter_short_syntax()
         {
             string GetMessage(Media media)

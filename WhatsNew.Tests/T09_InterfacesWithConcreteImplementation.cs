@@ -1,4 +1,6 @@
-﻿namespace WhatsNew.Tests
+﻿using WhatsNew.Tests.Utils;
+
+namespace WhatsNew.Tests
 {
     public class T09_InterfacesWithConcreteImplementation
     {
@@ -10,6 +12,7 @@
         }
 
         [Test]
+        [DotNetCore3]
         public void interface_uses_simplemethod()
         {
             IMediaDownloader mediaDownloader = new MediaDownloader();
@@ -19,6 +22,7 @@
         }
 
         [Test]
+        [DotNetCore3]
         public void interface_uses_concreteImplementation()
         {
             IMediaDownloader mediaDownloader = new MediaDownloader();

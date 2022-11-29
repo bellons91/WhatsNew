@@ -1,8 +1,11 @@
-﻿namespace WhatsNew.Tests
+﻿using WhatsNew.Tests.Utils;
+
+namespace WhatsNew.Tests
 {
     public class T04_Chunk
     {
         [Test]
+        [DotNet6]
         public void chunk_creates_parts()
         {
             var items = Enumerable.Range(0, 20);
@@ -14,6 +17,7 @@
         }
 
         [Test]
+        [DotNet6]
         public void chunk_creates_parts_odd_length()
         {
             var items = Enumerable.Range(0, 5);

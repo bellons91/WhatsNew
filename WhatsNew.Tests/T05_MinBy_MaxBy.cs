@@ -1,4 +1,6 @@
-﻿namespace WhatsNew.Tests
+﻿using WhatsNew.Tests.Utils;
+
+namespace WhatsNew.Tests
 {
     public class T05_MinBy_MaxBy
     {
@@ -11,6 +13,7 @@
             };
 
         [Test]
+        [DotNet6]
         public void maxBy_filter_by_id()
         {
             var maxUser = users.MaxBy(x => x.Id);
@@ -18,6 +21,7 @@
         }
 
         [Test]
+        [DotNet6]
         public void minBy_filter_by_id()
         {
             var maxUser = users.MinBy(x => x.Id);

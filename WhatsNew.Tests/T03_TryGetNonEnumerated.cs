@@ -1,8 +1,11 @@
-﻿namespace WhatsNew.Tests
+﻿using WhatsNew.Tests.Utils;
+
+namespace WhatsNew.Tests
 {
     public class T03_TryGetNonEnumerated
     {
         [Test]
+        [DotNet6]
         public void can_enumerate_list()
         {
             var range = Enumerable.Range(0, 200);
@@ -12,6 +15,7 @@
         }
 
         [Test]
+        [DotNet6]
         public void cannot_enumerate_yelded_items()
         {
             IEnumerable<int> range = Get(200);

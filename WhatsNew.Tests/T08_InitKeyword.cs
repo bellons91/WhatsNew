@@ -1,8 +1,11 @@
-﻿namespace WhatsNew.Tests
+﻿using WhatsNew.Tests.Utils;
+
+namespace WhatsNew.Tests
 {
     public class T08_InitKeyword
     {
         [Test]
+        [DotNet5]
         public void init_keyword_with_compiler_error()
         {
             var p = new Person { Age = 30, FirstName = "Davide", LastName = "Bellone" };

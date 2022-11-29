@@ -1,8 +1,11 @@
-﻿namespace WhatsNew.Tests
+﻿using WhatsNew.Tests.Utils;
+
+namespace WhatsNew.Tests
 {
     public class T10_DateOnly_TimeOnly
     {
         [Test]
+        [DotNet6]
         public void DateOnly_works()
         {
             DateOnly date = new DateOnly(2022, 5, 9);
@@ -14,6 +17,7 @@
         }
 
         [Test]
+        [DotNet6]
         public void TimeOnly_works()
         {
             TimeOnly time = new TimeOnly(9, 15, 45);

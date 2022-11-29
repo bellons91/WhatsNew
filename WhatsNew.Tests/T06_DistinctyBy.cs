@@ -1,4 +1,6 @@
-﻿namespace WhatsNew.Tests
+﻿using WhatsNew.Tests.Utils;
+
+namespace WhatsNew.Tests
 {
     public class T06_DistinctyBy
     {
@@ -15,6 +17,7 @@
             };
 
         [Test]
+        [DotNet6]
         public void DistinctBy_filter_by_id()
         {
             var distinctUsers = users.DistinctBy(x => x.Id);
@@ -22,6 +25,7 @@
         }
 
         [Test]
+        [DotNet6]
         public void DistinctBy_takes_first_occurrence()
         {
             var distinctUsers = users.DistinctBy(x => x.Id);
