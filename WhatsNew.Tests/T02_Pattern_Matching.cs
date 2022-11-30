@@ -2,49 +2,6 @@
 
 namespace WhatsNew.Tests
 {
-    public class T15_Pattern_Matching
-    {
-        [Test]
-        [DotNet5]
-        public void can_use_keywords()
-        {
-            bool IsLetterOrSeparator(char c) =>
-      c is (>= 'a' and <= 'z') or (>= 'A' and <= 'Z') or '.' or ',';
-
-            Assert.IsTrue(IsLetterOrSeparator('C'));
-            Assert.IsTrue(IsLetterOrSeparator('.'));
-            Assert.IsFalse(IsLetterOrSeparator('9'));
-        }
-
-        [Test]
-        [DotNet5]
-        public void can_use_isnull()
-        {
-            string SelfOrMessage(string s)
-            {
-                if (s is not null) return s;
-                return "error!";
-            }
-
-            Assert.That(SelfOrMessage("CIAO"), Is.EqualTo("CIAO"));
-            Assert.That(SelfOrMessage(null), Is.EqualTo("error!"));
-        }
-
-        [Test]
-        [DotNet7]
-        public void can_use_list_pattern()
-        {
-            string SelfOrMessage(int[] s)
-            {
-                if (s is [1, 2, 3]) return "CIAO";
-                return "error!";
-            }
-
-            Assert.That(SelfOrMessage(new int[] { 1, 2, 3 }), Is.EqualTo("CIAO"));
-            Assert.That(SelfOrMessage(new int[] { 1, 2, 3, 4 }), Is.EqualTo("error!"));
-        }
-    }
-
     public class T02_Switch_Pattern_Matching
     {
         [Test]
