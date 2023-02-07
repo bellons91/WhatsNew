@@ -43,5 +43,20 @@ namespace WhatsNew.Tests
             Assert.That(SelfOrMessage(new int[] { 1, 2, 3 }), Is.EqualTo("CIAO"));
             Assert.That(SelfOrMessage(new int[] { 1, 2, 3, 4 }), Is.EqualTo("error!"));
         }
+
+        [Test]
+        [DotNet7]
+        public void can_use_list_patterns_with_underscore()
+        {
+            string SelfOrMessage(int[] s)
+            {
+                if (s is [_, 2, _]) return "CIAO";
+                return "error!";
+            }
+
+            Assert.That(SelfOrMessage(new int[] { 1, 2, 3 }), Is.EqualTo("CIAO"));
+            Assert.That(SelfOrMessage(new int[] { 1, 6, 2, 3 }), Is.EqualTo("error!"));
+            Assert.That(SelfOrMessage(new int[] { 6, 3, 8, 4 }), Is.EqualTo("error!"));
+        }
     }
 }
