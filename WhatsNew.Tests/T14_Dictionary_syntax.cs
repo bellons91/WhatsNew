@@ -14,6 +14,17 @@
         }
 
         [Test]
+        public void old_syntax_with_brackets()
+        {
+            Dictionary<int, string> dict = new Dictionary<int, string>();
+            dict[1] = "uno";
+            dict[2] = "due";
+            dict[3] = "tre";
+
+            Assert.That(dict.Count, Is.EqualTo(3));
+        }
+
+        [Test]
         public void new_syntax()
         {
             Dictionary<int, string> dict = new Dictionary<int, string>()

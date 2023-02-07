@@ -18,7 +18,7 @@
         }
 
         [Test]
-        public void order_by_defaul()
+        public void order_by_default()
         {
             List<OrderedUser> users = _users.Select(u => new OrderedUser { Id = u.Id, Name = u.Name }).ToList();
 

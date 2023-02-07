@@ -1,6 +1,4 @@
-﻿using WhatsNew.Tests.Utils;
-
-namespace WhatsNew.Tests
+﻿namespace WhatsNew.Tests
 {
     public class T07_PriorityQueue
     {

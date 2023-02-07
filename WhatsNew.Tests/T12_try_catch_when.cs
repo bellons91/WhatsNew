@@ -3,7 +3,8 @@
     public class T12_try_catch_when
     {
         [Test]
-        public void new_operator_creates_string()
+        [DotNetCore3]
+        public void catch_exception_by_condition()
         {
             string Do(int value)
             {

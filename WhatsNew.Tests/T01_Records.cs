@@ -1,5 +1,3 @@
-using WhatsNew.Tests.Utils;
-
 namespace WhatsNew.Tests
 {
     //https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/records
@@ -25,6 +23,7 @@ namespace WhatsNew.Tests
             User alsoMe = new User(1, "Davide");
 
             Assert.That(me, Is.EqualTo(alsoMe));
+            Assert.That(me, Is.Not.SameAs(alsoMe));
         }
 
         [Test]
@@ -98,6 +97,12 @@ namespace WhatsNew.Tests
             Assert.That(me.KnownCsharpVersions.Count, Is.EqualTo(2));
         }
 
+        public abstract record Person(string FirstName, string LastName);
+        public record Teacher(string FirstName, string LastName)
+            : Person(FirstName, LastName);
+        public record Student(string FirstName, string LastName, int Grade)
+            : Person(FirstName, LastName);
+
         [Test]
         [DotNet5]
         public void Records_can_be_abstract()
@@ -110,11 +115,7 @@ namespace WhatsNew.Tests
             Assert.That(teacher, Is.AssignableTo<Person>());
         }
 
-        public abstract record Person(string FirstName, string LastName);
-        public record Teacher(string FirstName, string LastName)
-            : Person(FirstName, LastName);
-        public record Student(string FirstName, string LastName, int Grade)
-            : Person(FirstName, LastName);
+        public record struct Smartphone(string Model);
 
         [Test]
         [DotNet6]
@@ -123,7 +124,5 @@ namespace WhatsNew.Tests
             var smartphone = new Smartphone("IPhone");
             Assert.That(smartphone.Model, Is.Not.Null);
         }
-
-        public record struct Smartphone(string Model);
     }
 }

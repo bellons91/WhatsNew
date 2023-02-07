@@ -3,7 +3,8 @@
     public class T11_new_operator
     {
         [Test]
-        public void new_operator_creates_string()
+        [DotNet5]
+        public void new_operator_creates_empty_instance()
         {
             User user = new();
 
@@ -14,6 +15,7 @@
         }
 
         [Test]
+        [DotNet5]
         public void new_operator_creates_dictionary()
         {
             Dictionary<string, string> dict = new();
