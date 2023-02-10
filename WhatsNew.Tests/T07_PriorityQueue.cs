@@ -30,6 +30,15 @@
 
         [Test]
         [DotNet6]
+        public void priorityqueue_has_first_inserted_item_on_top()
+        {
+            _tasks.Enqueue(new TaskToDo("have breakfast"), 1);
+
+            Assert.That(_tasks.Peek(), Is.EqualTo(new TaskToDo("wake up")));
+        }
+
+        [Test]
+        [DotNet6]
         public void priorityqueue_puts_item_with_higher_priority_on_top()
         {
             _tasks.Enqueue(new TaskToDo("code"), 2);
