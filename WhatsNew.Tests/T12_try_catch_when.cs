@@ -35,10 +35,10 @@
         [Serializable]
         public class MyException : Exception
         {
+            public int ExceptionType { get; set; }
+
             public MyException()
             { }
-
-            public int ExceptionType { get; set; }
         }
     }
 }
