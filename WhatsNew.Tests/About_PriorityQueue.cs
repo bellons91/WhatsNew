@@ -1,6 +1,6 @@
 ﻿namespace WhatsNew.Tests
 {
-    public class T07_PriorityQueue
+    public class About_PriorityQueue
     {
         public record TaskToDo(string description);
         private PriorityQueue<TaskToDo, int> _tasks;

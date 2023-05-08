@@ -1,6 +1,6 @@
 ﻿namespace WhatsNew.Tests
 {
-    public class T15_Pattern_Matching
+    public class About_Pattern_Matching
     {
         [Test]
         [DotNet5]

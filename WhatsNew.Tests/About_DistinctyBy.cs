@@ -1,6 +1,6 @@
 ﻿namespace WhatsNew.Tests
 {
-    public class T06_DistinctyBy
+    public class About_DistinctyBy
     {
         public record User(int Id, string Name);
 

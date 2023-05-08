@@ -1,6 +1,6 @@
 ﻿namespace WhatsNew.Tests
 {
-    public class T08_InitKeyword
+    public class About_InitKeyword
     {
         [Test]
         [DotNet5]

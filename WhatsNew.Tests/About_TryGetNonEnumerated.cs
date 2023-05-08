@@ -1,6 +1,6 @@
 ﻿namespace WhatsNew.Tests
 {
-    public class T03_TryGetNonEnumerated
+    public class About_TryGetNonEnumerated
     {
         [Test]
         [DotNet6]

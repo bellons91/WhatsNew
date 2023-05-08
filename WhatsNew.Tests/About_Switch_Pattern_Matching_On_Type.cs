@@ -1,6 +1,6 @@
 ﻿namespace WhatsNew.Tests
 {
-    public class T02_Switch_Pattern_Matching_On_Type
+    public class About_Switch_Pattern_Matching_On_Type
     {
         [Test]
         [DotNetCore3]

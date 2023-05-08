@@ -1,6 +1,6 @@
 ﻿namespace WhatsNew.Tests
 {
-    public class T11_new_operator
+    public class About_new_operator
     {
         [Test]
         [DotNet5]

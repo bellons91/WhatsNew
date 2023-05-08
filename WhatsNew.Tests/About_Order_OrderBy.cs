@@ -1,6 +1,6 @@
 ﻿namespace WhatsNew.Tests
 {
-    public class T13_Order_OrderBy
+    public class About_Order_OrderBy
     {
         public static List<User> _users = new List<User> {
             new User(35, "Foo"),

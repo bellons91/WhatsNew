@@ -1,6 +1,6 @@
 ﻿namespace WhatsNew.Tests
 {
-    public class T16_Argument_Exception
+    public class About_Argument_Exception
     {
         [Test]
         [DotNet7]

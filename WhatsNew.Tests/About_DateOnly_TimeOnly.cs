@@ -1,6 +1,6 @@
 ﻿namespace WhatsNew.Tests
 {
-    public class T10_DateOnly_TimeOnly
+    public class About_DateOnly_TimeOnly
     {
         [Test]
         [DotNet6]

@@ -1,6 +1,6 @@
 ﻿namespace WhatsNew.Tests
 {
-    public class T09_InterfacesWithConcreteImplementation
+    public class About_InterfacesWithConcreteImplementation
     {
         public interface IMediaDownloader
         {

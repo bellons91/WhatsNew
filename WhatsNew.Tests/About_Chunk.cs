@@ -1,6 +1,6 @@
 ﻿namespace WhatsNew.Tests
 {
-    public class T04_Chunk
+    public class About_Chunk
     {
         [Test]
         [DotNet6]

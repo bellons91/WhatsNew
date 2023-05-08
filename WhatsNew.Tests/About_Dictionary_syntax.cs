@@ -1,6 +1,6 @@
 ﻿namespace WhatsNew.Tests
 {
-    public class T14_Dictionary_syntax
+    public class About_Dictionary_syntax
     {
         [Test]
         public void old_syntax()

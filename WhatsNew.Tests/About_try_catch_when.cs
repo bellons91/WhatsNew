@@ -1,6 +1,6 @@
 ﻿namespace WhatsNew.Tests
 {
-    public class T12_try_catch_when
+    public class About_try_catch_when
     {
         [Test]
         [DotNetCore3]
