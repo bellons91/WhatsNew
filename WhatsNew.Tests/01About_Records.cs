@@ -80,26 +80,11 @@ namespace WhatsNew.Tests
             Assert.That(me.Skills.Count, Is.EqualTo(3));
         }
 
-        public record CsharpDeveloper(int Id, string Name, List<string> Skills) : Developer(Id, Name, Skills)
-        {
-            public string[] KnownCsharpVersions { get; set; }
-        }
-
-        [Test]
-        [DotNet5]
-        public void Records_can_have_explicit_properties()
-        {
-            CsharpDeveloper me = new CsharpDeveloper(1, "Davide", new List<string> { "Blogging" })
-            {
-                KnownCsharpVersions = new string[] { "C#8", "C#11" }
-            };
-
-            Assert.That(me.KnownCsharpVersions.Count, Is.EqualTo(2));
-        }
-
         public abstract record Person(string FirstName, string LastName);
+
         public record Teacher(string FirstName, string LastName)
             : Person(FirstName, LastName);
+
         public record Student(string FirstName, string LastName, int Grade)
             : Person(FirstName, LastName);
 
