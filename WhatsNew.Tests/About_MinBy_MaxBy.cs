@@ -5,9 +5,9 @@
         public record User(int Id, string Name);
 
         public static List<User> users = new List<User> {
-            new User(35, "Foo"),
-            new User(11, "Bar"),
-            new User(64, "Baz"),
+            new User(35, "Sandro"),
+            new User(11, "Gianni"),
+            new User(64, "Carola"),
             };
 
         [Test]

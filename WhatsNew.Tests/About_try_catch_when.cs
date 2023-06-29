@@ -4,41 +4,46 @@
     {
         [Test]
         [DotNetCore3]
-        public void catch_exception_by_condition()
+        public async Task catch_exception_by_condition()
         {
-            string Do(int value)
+            async Task<string> CallEndpoint(string value)
             {
                 try
                 {
-                    if (value == 0) return "ok";
-                    throw new MyException() { ExceptionType = value };
+                    ArgumentException.ThrowIfNullOrEmpty(value);
+
+                    var httpClient = new HttpClient();
+                    var response = await httpClient.GetAsync(value);
+                    response.EnsureSuccessStatusCode();
+
+                    return "OK";
                 }
-                catch (MyException ex) when (ex.ExceptionType % 2 == 0)
+                catch (HttpRequestException ex)
+                    when (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    return "even";
+                    return "Page not found";
                 }
-                catch (MyException ex)
+                catch (HttpRequestException ex)
                 {
-                    return "odd";
+                    return "Another HTTP Error";
                 }
                 catch (Exception)
                 {
-                    return "unknown";
+                    return "Unknown error";
                 }
             }
 
-            Assert.That(Do(0), Is.EqualTo("ok"));
-            Assert.That(Do(5), Is.EqualTo("odd"));
-            Assert.That(Do(30), Is.EqualTo("even"));
-        }
+            var okResult = await CallEndpoint("https://www.code4it.dev/");
+            Assert.That(okResult, Is.EqualTo("OK"));
 
-        [Serializable]
-        public class MyException : Exception
-        {
-            public int ExceptionType { get; set; }
+            var notFoundResult = await CallEndpoint("https://www.code4it.dev/non-existing-page");
+            Assert.That(notFoundResult, Is.EqualTo("Page not found"));
 
-            public MyException()
-            { }
+            var anotherHttpErrorResult = await CallEndpoint("https://www.code4it-invalidHost.dev/");
+            Assert.That(anotherHttpErrorResult, Is.EqualTo("Another HTTP Error"));
+
+            var genericErrorResult = await CallEndpoint("");
+            Assert.That(genericErrorResult, Is.EqualTo("Unknown error"));
         }
     }
 }

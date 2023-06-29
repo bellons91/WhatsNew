@@ -3,9 +3,9 @@
     public class About_Order_OrderBy
     {
         public static List<User> _users = new List<User> {
-            new User(35, "Foo"),
-            new User(11, "Bar"),
-            new User(64, "Baz"),
+            new User(35, "Pino"),
+            new User(11, "Marco"),
+            new User(64, "Sonia"),
             };
 
         [Test]

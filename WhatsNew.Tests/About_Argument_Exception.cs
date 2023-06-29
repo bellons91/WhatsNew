@@ -42,7 +42,7 @@
             }
             catch (ArgumentException ex)
             {
-                Assert.That(ex.ParamName, Is.EqualTo("value"));
+                Assert.That(ex.ParamName, Is.EqualTo("input value"));
             }
         }
 
@@ -60,7 +60,7 @@
 
         private static string ReturnSelf_ThrowIfNullOrEmpty(string value)
         {
-            ArgumentException.ThrowIfNullOrEmpty(value, nameof(value));
+            ArgumentException.ThrowIfNullOrEmpty(value, "input value");
             return value;
         }
     }

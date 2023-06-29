@@ -6,12 +6,14 @@
         [DotNet6]
         public void chunk_creates_parts()
         {
-            var items = Enumerable.Range(0, 20);
+            var items = Enumerable.Range(0, 6);
 
             IEnumerable<int[]> chunks = items.Chunk(2);
 
-            Assert.That(chunks.Count, Is.EqualTo(10));
-            Assert.That(chunks.First(), Is.EquivalentTo(new[] { 0, 1 }));
+            Assert.That(chunks.Count, Is.EqualTo(3));
+            Assert.That(chunks.ElementAt(0), Is.EquivalentTo(new[] { 0, 1 }));
+            Assert.That(chunks.ElementAt(1), Is.EquivalentTo(new[] { 2, 3 }));
+            Assert.That(chunks.ElementAt(2), Is.EquivalentTo(new[] { 4, 5 }));
         }
 
         [Test]
@@ -23,7 +25,9 @@
             IEnumerable<int[]> chunks = items.Chunk(2);
 
             Assert.That(chunks.Count, Is.EqualTo(3));
-            Assert.That(chunks.Last(), Is.EquivalentTo(new[] { 4 }));
+            Assert.That(chunks.ElementAt(0), Is.EquivalentTo(new[] { 0, 1 }));
+            Assert.That(chunks.ElementAt(1), Is.EquivalentTo(new[] { 2, 3 }));
+            Assert.That(chunks.ElementAt(2), Is.EquivalentTo(new[] { 4 }));
         }
     }
 }

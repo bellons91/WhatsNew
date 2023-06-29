@@ -11,7 +11,7 @@
             Assert.That(user, Is.InstanceOf<User>());
             Assert.That(user, Is.Not.Null);
             Assert.That(user.Id, Is.EqualTo(0));
-            Assert.That(user.Name, Is.EqualTo(""));
+            Assert.That(user.Name, Is.EqualTo("Davide"));
         }
 
         [Test]
@@ -28,7 +28,7 @@
         public class User
         {
             public int Id { get; set; }
-            public string Name { get; set; } = "";
+            public string Name { get; set; } = "Davide";
         }
     }
 }

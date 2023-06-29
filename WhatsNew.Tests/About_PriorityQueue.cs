@@ -2,16 +2,16 @@
 {
     public class About_PriorityQueue
     {
-        public record TaskToDo(string description);
-        private PriorityQueue<TaskToDo, int> _tasks;
+        public record ToDoItem(string description);
+        private PriorityQueue<ToDoItem, int> _tasks;
 
         [SetUp]
         public void SetupQueue()
         {
-            _tasks = new PriorityQueue<TaskToDo, int>();
-            _tasks.Enqueue(new TaskToDo("turn off tv"), 5);
-            _tasks.Enqueue(new TaskToDo("wake up"), 1);
-            _tasks.Enqueue(new TaskToDo("clean up house"), 3);
+            _tasks = new PriorityQueue<ToDoItem, int>();
+            _tasks.Enqueue(new ToDoItem("Deploy on dev"), 5);
+            _tasks.Enqueue(new ToDoItem("Create repository"), 1);
+            _tasks.Enqueue(new ToDoItem("Write tests"), 3);
         }
 
         [Test]
@@ -25,27 +25,27 @@
         [DotNet6]
         public void priorityqueue_has_prioritized_items_on_top()
         {
-            Assert.That(_tasks.Peek(), Is.EqualTo(new TaskToDo("wake up")));
+            Assert.That(_tasks.Peek(), Is.EqualTo(new ToDoItem("Create repository")));
         }
 
         [Test]
         [DotNet6]
         public void priorityqueue_has_first_inserted_item_on_top()
         {
-            _tasks.Enqueue(new TaskToDo("have breakfast"), 1);
+            _tasks.Enqueue(new ToDoItem("Initialize Solution"), 1);
 
-            Assert.That(_tasks.Peek(), Is.EqualTo(new TaskToDo("wake up")));
+            Assert.That(_tasks.Peek(), Is.EqualTo(new ToDoItem("Create repository")));
         }
 
         [Test]
         [DotNet6]
         public void priorityqueue_puts_item_with_higher_priority_on_top()
         {
-            _tasks.Enqueue(new TaskToDo("code"), 2);
+            _tasks.Enqueue(new ToDoItem("Write code"), 2);
 
-            _tasks.Dequeue();// removes "turn off tv"
+            _tasks.Dequeue();
 
-            Assert.That(_tasks.Dequeue(), Is.EqualTo(new TaskToDo("code")));
+            Assert.That(_tasks.Dequeue(), Is.EqualTo(new ToDoItem("Write code")));
         }
     }
 }

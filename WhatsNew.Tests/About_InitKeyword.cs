@@ -13,8 +13,9 @@
 
         public class Person
         {
-            public string FirstName { get; init; }
-            public string LastName { get; init; }
+            public string FirstName { get; init; } = string.Empty;
+
+            public string LastName { get; init; } = string.Empty;
 
             public int? Age { get; set; }
         }
