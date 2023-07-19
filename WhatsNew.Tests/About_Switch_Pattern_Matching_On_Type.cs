@@ -4,7 +4,7 @@
     {
         [Test]
         [DotNetCore3]
-        public void accepts_type_in_case_branch()
+        public void Accepts_type_in_case_branch()
         {
             string GetMessage(Media media)
             {
@@ -21,7 +21,7 @@
 
         [Test]
         [DotNetCore3]
-        public void can_use_when_clause()
+        public void Can_use_when_clause()
         {
             string GetMessage(Media media)
             {
@@ -40,7 +40,7 @@
 
         [Test]
         [DotNetCore3]
-        public void accepts_type_in_case_branch_short_syntax()
+        public void Accepts_type_in_case_branch_short_syntax()
         {
             string GetMessage(Media media)
             {
@@ -57,7 +57,7 @@
 
         [Test]
         [DotNetCore3]
-        public void with_filter_short_syntax()
+        public void With_filter_short_syntax()
         {
             string GetMessage(Media media)
             {

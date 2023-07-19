@@ -4,7 +4,7 @@
     {
         [Test]
         [DotNetCore3]
-        public async Task catch_exception_by_condition()
+        public async Task Catch_exception_by_condition()
         {
             async Task<string> CallEndpoint(string value)
             {

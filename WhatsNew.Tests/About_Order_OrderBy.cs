@@ -9,7 +9,7 @@
             };
 
         [Test]
-        public void order_by_field()
+        public void Order_by_field()
         {
             var sortedUsers = _users.OrderBy(x => x.Id);
 
@@ -18,7 +18,7 @@
         }
 
         [Test]
-        public void order_by_default()
+        public void Order_by_default()
         {
             List<OrderedUser> users = _users.Select(u => new OrderedUser { Id = u.Id, Name = u.Name }).ToList();
 

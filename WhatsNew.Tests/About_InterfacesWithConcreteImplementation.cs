@@ -11,7 +11,7 @@
 
         [Test]
         [DotNetCore3]
-        public void interface_uses_simplemethod()
+        public void Interface_uses_simplemethod()
         {
             IMediaDownloader mediaDownloader = new MediaDownloader();
 
@@ -21,7 +21,7 @@
 
         [Test]
         [DotNetCore3]
-        public void interface_uses_concreteImplementation()
+        public void Interface_uses_concreteImplementation()
         {
             IMediaDownloader mediaDownloader = new MediaDownloader();
 

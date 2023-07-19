@@ -4,7 +4,7 @@
     {
         [Test]
         [DotNet6]
-        public void can_enumerate_list()
+        public void Can_enumerate_list()
         {
             var range = Enumerable.Range(0, 200);
 
@@ -14,7 +14,7 @@
 
         [Test]
         [DotNet6]
-        public void cannot_enumerate_yelded_items()
+        public void Cannot_enumerate_yelded_items()
         {
             IEnumerable<int> range = Get(200);
 

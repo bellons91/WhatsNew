@@ -12,7 +12,7 @@
 
         [Test]
         [DotNet6]
-        public void maxBy_filter_by_id()
+        public void MaxBy_filter_by_id()
         {
             var maxUser = users.MaxBy(x => x.Id);
             Assert.That(maxUser.Id, Is.EqualTo(64));
@@ -20,7 +20,7 @@
 
         [Test]
         [DotNet6]
-        public void minBy_filter_by_id()
+        public void MinBy_filter_by_id()
         {
             var maxUser = users.MinBy(x => x.Id);
             Assert.That(maxUser.Id, Is.EqualTo(11));

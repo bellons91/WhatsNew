@@ -3,7 +3,7 @@
     public class About_Dictionary_syntax
     {
         [Test]
-        public void old_syntax()
+        public void Old_syntax()
         {
             Dictionary<int, string> dict = new Dictionary<int, string>();
             dict.Add(1, "uno");
@@ -14,7 +14,7 @@
         }
 
         [Test]
-        public void old_syntax_with_brackets()
+        public void Old_syntax_with_brackets()
         {
             Dictionary<int, string> dict = new Dictionary<int, string>();
             dict[1] = "uno";
@@ -25,7 +25,7 @@
         }
 
         [Test]
-        public void new_syntax()
+        public void New_syntax()
         {
             Dictionary<int, string> dict = new Dictionary<int, string>()
             {

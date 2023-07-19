@@ -4,7 +4,7 @@
     {
         [Test]
         [DotNet5]
-        public void new_operator_creates_empty_instance()
+        public void New_operator_creates_empty_instance()
         {
             User user = new();
 
@@ -16,7 +16,7 @@
 
         [Test]
         [DotNet5]
-        public void new_operator_creates_dictionary()
+        public void New_operator_creates_dictionary()
         {
             Dictionary<string, string> dict = new();
 

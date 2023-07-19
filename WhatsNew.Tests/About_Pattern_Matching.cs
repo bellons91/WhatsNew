@@ -4,7 +4,7 @@
     {
         [Test]
         [DotNet5]
-        public void can_use_keywords()
+        public void Can_use_keywords()
         {
             bool IsLetterOrSeparator(char inputChar) =>
       inputChar is (>= 'a' and <= 'z') or (>= 'A' and <= 'Z') or '.' or ',';
@@ -16,7 +16,7 @@
 
         [Test]
         [DotNet5]
-        public void can_use_isnull()
+        public void Can_use_isnull()
         {
             string SelfOrMessage(string content)
             {
@@ -31,7 +31,7 @@
 
         [Test]
         [DotNet7]
-        public void can_use_list_pattern()
+        public void Can_use_list_pattern()
         {
             string SelfOrMessage(int[] values)
             {
@@ -45,7 +45,7 @@
 
         [Test]
         [DotNet7]
-        public void can_use_list_pattern_with_slice()
+        public void Can_use_list_pattern_with_slice()
         {
             string SelfOrMessage(int[] values)
             {
@@ -60,7 +60,7 @@
 
         [Test]
         [DotNet7]
-        public void can_use_list_patterns_with_discard()
+        public void Can_use_list_patterns_with_discard()
         {
             string SelfOrMessage(int[] values)
             {
@@ -75,7 +75,7 @@
 
         [Test]
         [DotNet7]
-        public void can_use_list_patterns_with_var()
+        public void Can_use_list_patterns_with_var()
         {
             string SelfOrMessage(int[] values)
             {
@@ -90,7 +90,7 @@
 
         [Test]
         [DotNet7]
-        public void can_use_list_patterns_with_condition()
+        public void Can_use_list_patterns_with_condition()
         {
             string SelfOrMessage(int[] values)
             {
