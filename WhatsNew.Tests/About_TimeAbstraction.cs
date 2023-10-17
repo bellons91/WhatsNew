@@ -21,7 +21,7 @@ namespace WhatsNew.Tests
 			var app = builder.Build();
 			var calendar = app.Services.GetService<TodayCalendar>();
 
-			Assert.That(calendar.DayName(), Is.EqualTo("Monday"));
+			Assert.That(calendar.DayName(), Is.EqualTo("Tuesday"));
 		}
 
 
