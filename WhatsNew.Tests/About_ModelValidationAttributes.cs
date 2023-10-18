@@ -20,42 +20,42 @@ namespace WhatsNew.Tests
 			[DotNet8]
 			public void LengthValues_Pass()
 			{
-				var mode = new MusicAlbum()
+				var model = new MusicAlbum()
 				{
 					Name = "My rock album",
 					Tracks = new[] { "Track1", "Track2" }
 				};
 
-				var res = ModelValidationHelper.Validate(mode);
-				Assert.That(res, Is.Empty);
+				var validationResult = ModelValidationHelper.Validate(model);
+				Assert.That(validationResult, Is.Empty);
 			}
 
 			[Test]
 			[DotNet8]
 			public void LengthValues_FailOnString()
 			{
-				var mode = new MusicAlbum()
+				var model = new MusicAlbum()
 				{
 					Name = "Hey",
 					Tracks = new[] { "Track1", "Track2" }
 				};
 
-				var res = ModelValidationHelper.Validate(mode);
-				Assert.That(res, Is.Not.Empty);
+				var validationResult = ModelValidationHelper.Validate(model);
+				Assert.That(validationResult, Is.Not.Empty);
 			}
 
 			[Test]
 			[DotNet8]
 			public void LengthValues_FailOnCollection()
 			{
-				var mode = new MusicAlbum()
+				var model = new MusicAlbum()
 				{
 					Name = "Hey you!",
 					Tracks = new[] { "Track1" }
 				};
 
-				var res = ModelValidationHelper.Validate(mode);
-				Assert.That(res, Is.Not.Empty);
+				var validationResult = ModelValidationHelper.Validate(model);
+				Assert.That(validationResult, Is.Not.Empty);
 			}
 		}
 
@@ -72,20 +72,20 @@ namespace WhatsNew.Tests
 			[DotNet8]
 			public void DeniedValues_Pass()
 			{
-				var mode = new MusicGenre() { Type = "rock" };
+				var model = new MusicGenre() { Type = "rock" };
 
-				var res = ModelValidationHelper.Validate(mode);
-				Assert.That(res, Is.Empty);
+				var validationResult = ModelValidationHelper.Validate(model);
+				Assert.That(validationResult, Is.Empty);
 			}
 
 			[Test]
 			[DotNet8]
 			public void DeniedValues_Fail()
 			{
-				var mode = new MusicGenre() { Type = "trap" };
+				var model = new MusicGenre() { Type = "trap" };
 
-				var res = ModelValidationHelper.Validate(mode);
-				Assert.That(res, Is.Not.Empty);
+				var validationResult = ModelValidationHelper.Validate(model);
+				Assert.That(validationResult, Is.Not.Empty);
 			}
 
 		}
@@ -102,20 +102,18 @@ namespace WhatsNew.Tests
 			[DotNet8]
 			public void AllowedValues_Pass()
 			{
-				var mode = new Person() { Role = "teacher" };
-
-				var res = ModelValidationHelper.Validate(mode);
-				Assert.That(res, Is.Empty);
+				var model = new Person() { Role = "teacher" };
+				var validationResult = ModelValidationHelper.Validate(model);
+				Assert.That(validationResult, Is.Empty);
 			}
 
 			[Test]
 			[DotNet8]
 			public void AllowedValues_Fail()
 			{
-				var mode = new Person() { Role = "worker" };
-
-				var res = ModelValidationHelper.Validate(mode);
-				Assert.That(res, Is.Not.Empty);
+				var model = new Person() { Role = "worker" };
+				var validationResult = ModelValidationHelper.Validate(model);
+				Assert.That(validationResult, Is.Not.Empty);
 			}
 
 		}
@@ -126,7 +124,8 @@ namespace WhatsNew.Tests
 				var results = new List<ValidationResult>();
 				var validationContext = new ValidationContext(model, null, null);
 				Validator.TryValidateObject(model, validationContext, results, true);
-				if (model is IValidatableObject) (model as IValidatableObject).Validate(validationContext);
+				if (model is IValidatableObject validatableModel)
+					results.AddRange(validatableModel.Validate(validationContext));
 				return results;
 			}
 		}
