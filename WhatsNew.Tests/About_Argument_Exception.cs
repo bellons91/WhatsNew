@@ -46,6 +46,57 @@
 			}
 		}
 
+
+		[Test]
+		[TestCase("")]
+		[TestCase(null)]
+		[TestCase("                           ")]
+		[DotNet8]
+		public void ShouldThrowIfNullOrWhitespace(string invalidValue)
+		{
+			try
+			{
+				var self = ReturnSelf_ThrowIfNullOrWhitespace(invalidValue);
+			}
+			catch (ArgumentException ex)
+			{
+				Assert.That(ex.ParamName, Is.EqualTo("value"));
+			}
+		}
+
+
+
+		[Test]
+		[TestCase(-3)]
+		[TestCase(0)]
+		[DotNet8]
+		public void ShouldThrowIfLessThanZero(int invalidValue)
+		{
+			try
+			{
+				var self = ReturnSelf_ThrowIfLessThanZero(invalidValue);
+			}
+			catch (ArgumentException ex)
+			{
+				Assert.That(ex.ParamName, Is.EqualTo("value"));
+			}
+		}
+
+		private static int ReturnSelf_ThrowIfLessThanZero(int value)
+		{
+			ArgumentOutOfRangeException.ThrowIfLessThan(value, 0);
+
+			return value;
+		}
+
+		private static string ReturnSelf_ThrowIfNullOrWhitespace(string value)
+		{
+			ArgumentException.ThrowIfNullOrWhiteSpace(value);
+
+			return value;
+		}
+
+
 		private static string ReturnSelf_ThrowIfNull(string value)
 		{
 			ArgumentNullException.ThrowIfNull(value, nameof(value));
