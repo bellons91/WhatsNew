@@ -9,7 +9,7 @@ namespace WhatsNew.Tests
 		{
 			public class MusicAlbum
 			{
-				[Length(4, 10)]
+				[Length(4, 15)]
 				public string Name { get; set; }
 
 				[Length(2, 20)]
@@ -22,7 +22,7 @@ namespace WhatsNew.Tests
 			{
 				var model = new MusicAlbum()
 				{
-					Name = "My rock album",
+					Name = "Californication",
 					Tracks = new[] { "Track1", "Track2" }
 				};
 
