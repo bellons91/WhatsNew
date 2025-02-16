@@ -42,4 +42,11 @@
 		{
 		}
 	}
+
+    public class DotNet9Attribute : CategoryAttribute
+    {
+        public DotNet9Attribute() : base(".NET 9, C# 13")
+        {
+        }
+    }
 }
