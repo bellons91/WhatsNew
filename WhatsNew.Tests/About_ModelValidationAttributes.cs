@@ -22,7 +22,7 @@ namespace WhatsNew.Tests
 			{
 				var model = new MusicAlbum()
 				{
-					Name = "My rock album",
+					Name = "My album",
 					Tracks = new[] { "Track1", "Track2" }
 				};
 

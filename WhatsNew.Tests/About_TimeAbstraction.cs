@@ -20,8 +20,9 @@ namespace WhatsNew.Tests
 
 			var app = builder.Build();
 			var calendar = app.Services.GetService<TodayCalendar>();
+            var defaultToday = DateTime.Today.DayOfWeek;
 
-			Assert.That(calendar.DayName(), Is.EqualTo("Tuesday"));
+            Assert.That(calendar.DayName(), Is.EqualTo(defaultToday.ToString()));
 		}
 
 
