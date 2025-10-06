@@ -9,11 +9,23 @@
 			string DownloadVideo(string id) => Download("video", id);
 		}
 
-		[Test]
+        public class PartialMediaDownloader : IMediaDownloader
+        {
+            public string Download(string type, string id) => $"I am a {type}";
+        }
+
+        public class FullMediaDownloader : IMediaDownloader
+        {
+            public string Download(string type, string id) => $"Full download of {type}";
+			public string DownloadVideo(string id) => "Full video download";
+        }
+
+
+        [Test]
 		[DotNetCore3]
 		public void Interface_uses_simplemethod()
 		{
-			IMediaDownloader mediaDownloader = new MediaDownloader();
+			IMediaDownloader mediaDownloader = new PartialMediaDownloader();
 
 			var content = mediaDownloader.Download("photo", "123");
 			Assert.That(content, Is.EqualTo("I am a photo"));
@@ -23,20 +35,10 @@
 		[DotNetCore3]
 		public void Interface_uses_concreteImplementation()
 		{
-			IMediaDownloader mediaDownloader = new MediaDownloader();
+			IMediaDownloader mediaDownloader = new PartialMediaDownloader();
 
 			var content = mediaDownloader.DownloadVideo("123");
 			Assert.That(content, Is.EqualTo("I am a video"));
 		}
-
-		public class MediaDownloader : IMediaDownloader
-		{
-			public string Download(string type, string id)
-			{
-				return $"I am a {type}";
-			}
-		}
-
-		public record User(int Id, string Name);
 	}
 }

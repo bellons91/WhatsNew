@@ -2,6 +2,17 @@
 {
 	public class About_Switch_Pattern_Matching_On_Type
 	{
+		public class Media
+		{
+			public string Url { get; set; }
+		}
+
+		public class Video : Media
+		{
+			public int Duration { get; set; }
+			public bool Public { get; set; }
+		}
+
 		[Test]
 		[DotNetCore3]
 		public void Accepts_type_in_case_branch()
@@ -74,15 +85,5 @@
 			Assert.That(GetMessage(new Media()), Is.EqualTo("This is a generic media"));
 		}
 
-		public class Media
-		{
-			public string Url { get; set; }
-		}
-
-		public class Video : Media
-		{
-			public int Duration { get; set; }
-			public bool Public { get; set; }
-		}
 	}
 }
