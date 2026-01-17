@@ -52,7 +52,7 @@ namespace TopicsPicker
             AnsiConsole.Clear();
             AnsiConsole.Write(CreateTopicsPanel(topics, selectedTopics));
             AnsiConsole.WriteLine();
-            AnsiConsole.MarkupLine("[green bold]All topics completed! 🎉[/]");
+            AnsiConsole.MarkupLine("[green bold]All topics completed![/]");
             AnsiConsole.MarkupLine("\n[green]Session completed![/]");
         }
 
