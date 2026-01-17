@@ -1,6 +1,7 @@
 ﻿namespace WhatsNew.Tests
 {
-	public class About_PriorityQueue
+	[IncludeRandomSelection("PriorityQueue data type")]
+    public class About_PriorityQueue
 	{
 		public record ToDoItem(string description);
 		private PriorityQueue<ToDoItem, int> _tasks;

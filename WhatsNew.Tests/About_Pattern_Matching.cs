@@ -1,6 +1,7 @@
 ﻿namespace WhatsNew.Tests
 {
-	public class About_Pattern_Matching
+	[IncludeRandomSelection("Enhanced Pattern Matching capabilities")]
+    public class About_Pattern_Matching
 	{
 		[Test]
 		[DotNet5]

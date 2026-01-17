@@ -3,6 +3,7 @@ using JSON = System.Text.Json;
 
 namespace WhatsNew.Tests
 {
+	[IncludeRandomSelection("Types can be referenced with aliases")]	
 	public class About_AliasOnTypes
 	{
 		[Test]

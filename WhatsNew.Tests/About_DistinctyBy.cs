@@ -1,6 +1,7 @@
 ﻿namespace WhatsNew.Tests
 {
-	public class About_DistinctyBy
+	[IncludeRandomSelection("LINQ's DistinctBy method")]
+    public class About_DistinctyBy
 	{
 		public record User(int Id, string Name);
 

@@ -1,6 +1,7 @@
 ﻿namespace WhatsNew.Tests
 {
-	public class About_try_catch_when
+	[IncludeRandomSelection("try-catch with 'when' clause")]
+    public class About_try_catch_when
 	{
 		[Test]
 		[DotNetCore3]

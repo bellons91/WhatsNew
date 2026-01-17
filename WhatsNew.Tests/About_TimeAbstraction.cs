@@ -3,7 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace WhatsNew.Tests
 {
-	public class About_TimeAbstraction
+	[IncludeRandomSelection("Time abstraction with TimeProvider")]
+    public class About_TimeAbstraction
 	{
 
 

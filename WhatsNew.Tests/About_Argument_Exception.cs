@@ -1,6 +1,7 @@
 ﻿namespace WhatsNew.Tests
 {
-	public class About_Argument_Exception
+	[IncludeRandomSelection("New ArgumentException utility methods")]
+    public class About_Argument_Exception
 	{
 		[Test]
 		[DotNet7]

@@ -1,6 +1,7 @@
 ﻿namespace WhatsNew.Tests
 {
-	public class About_RandomClass
+	[IncludeRandomSelection("Random class enhancements")]
+    public class About_RandomClass
 	{
 		[Test]
 		[DotNet8]

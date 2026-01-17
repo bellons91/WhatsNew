@@ -1,6 +1,7 @@
 ﻿namespace WhatsNew.Tests
 {
-	public class About_InterfacesWithConcreteImplementation
+	[IncludeRandomSelection("Interfaces with concrete implementation")]
+    public class About_InterfacesWithConcreteImplementation
 	{
 		public interface IMediaDownloader
 		{

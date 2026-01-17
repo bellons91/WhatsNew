@@ -1,9 +1,8 @@
 ﻿namespace WhatsNew.Tests
 {
-	public class About_LambdasWithDefaultValue
+	[IncludeRandomSelection("Lambdas with default value")]
+    public class About_LambdasWithDefaultValue
 	{
-
-
 		[Test]
 		[DotNet8]
 		public void Can_use_default_value()

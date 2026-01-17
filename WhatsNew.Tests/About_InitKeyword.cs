@@ -1,6 +1,7 @@
 ﻿namespace WhatsNew.Tests
 {
-	public class About_InitKeyword
+	[IncludeRandomSelection("Init-only setters")]
+    public class About_InitKeyword
 	{
 		[Test]
 		[DotNet5]

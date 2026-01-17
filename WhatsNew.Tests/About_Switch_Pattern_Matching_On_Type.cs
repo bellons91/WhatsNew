@@ -1,6 +1,7 @@
 ﻿namespace WhatsNew.Tests
 {
-	public class About_Switch_Pattern_Matching_On_Type
+	[IncludeRandomSelection("Switch pattern matching on Type")]
+    public class About_Switch_Pattern_Matching_On_Type
 	{
 		[Test]
 		[DotNetCore3]

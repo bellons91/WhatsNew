@@ -1,6 +1,7 @@
 ﻿namespace WhatsNew.Tests
 {
-	public class About_ClassWithPrimaryConstructor
+	[IncludeRandomSelection("Classes with Primary Constructors")]
+    public class About_ClassWithPrimaryConstructor
 	{
 
 		[Test]

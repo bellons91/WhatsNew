@@ -1,6 +1,7 @@
 ﻿namespace WhatsNew.Tests
 {
-	public class About_DateOnly_TimeOnly
+	[IncludeRandomSelection("DateOnly and TimeOnly types")]
+    public class About_DateOnly_TimeOnly
 	{
 		[Test]
 		[DotNet6]

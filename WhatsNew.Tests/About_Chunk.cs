@@ -1,5 +1,6 @@
 ﻿namespace WhatsNew.Tests
 {
+	[IncludeRandomSelection("LINQ's Chunk method")]
 	public class About_Chunk
 	{
 		[Test]

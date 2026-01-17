@@ -1,6 +1,7 @@
 ﻿namespace WhatsNew.Tests
 {
-	public class About_SpreadOperatorOnCollections
+	[IncludeRandomSelection("Spread operator on collections")]
+    public class About_SpreadOperatorOnCollections
 	{
 		[Test]
 		[DotNet8]

@@ -1,5 +1,6 @@
 ﻿namespace WhatsNew.Tests
 {
+    [IncludeRandomSelection("Enhanced 'params' keyword functionality")]
     public class About_ParamsKeyword
 	{
 

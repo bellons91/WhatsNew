@@ -1,6 +1,7 @@
 ﻿namespace WhatsNew.Tests
 {
-	public class About_Order_OrderBy
+	[IncludeRandomSelection("LINQ's OrderBy method enhancements")]
+    public class About_Order_OrderBy
 	{
 		public static List<User> _users = new List<User> {
 			new User(35, "Pino"),

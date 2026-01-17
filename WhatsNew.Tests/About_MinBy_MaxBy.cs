@@ -1,6 +1,7 @@
 ﻿namespace WhatsNew.Tests
 {
-	public class About_MinBy_MaxBy
+	[IncludeRandomSelection("LINQ's MinBy and MaxBy methods")]
+    public class About_MinBy_MaxBy
 	{
 		public record User(int Id, string Name);
 

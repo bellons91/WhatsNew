@@ -1,6 +1,7 @@
 ﻿namespace WhatsNew.Tests
 {
-	public class About_new_operator
+	[IncludeRandomSelection("New 'new' operator features")]
+    public class About_new_operator
 	{
 		[Test]
 		[DotNet5]

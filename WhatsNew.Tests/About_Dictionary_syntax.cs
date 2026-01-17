@@ -1,6 +1,7 @@
 ﻿namespace WhatsNew.Tests
 {
-	public class About_Dictionary_syntax
+	[IncludeRandomSelection("Dictionary syntax enhancements")]
+    public class About_Dictionary_syntax
 	{
 		[Test]
 		public void Old_syntax()

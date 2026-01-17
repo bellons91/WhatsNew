@@ -7,9 +7,24 @@
 			Random rd = new Random();
 			return items.OrderBy(_ => rd.Next());
 		}
+
+
 	}
 
-	public class DotNetCore3Attribute : CategoryAttribute
+
+	[AttributeUsage(AttributeTargets.Class)]
+    public class IncludeRandomSelectionAttribute : Attribute
+	{
+        public IncludeRandomSelectionAttribute(string description)
+        {
+            Description = description;
+        }
+
+        public string Description { get; }
+    }
+
+
+    public class DotNetCore3Attribute : CategoryAttribute
 	{
 		public DotNetCore3Attribute() : base(".NET Core 3, C# 8")
 		{
@@ -49,4 +64,5 @@
         {
         }
     }
+ 
 }

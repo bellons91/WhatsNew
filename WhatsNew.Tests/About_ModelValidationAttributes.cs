@@ -2,7 +2,8 @@
 
 namespace WhatsNew.Tests
 {
-	public class About_ModelValidationAttributes
+	[IncludeRandomSelection("New Model validation attributes")]
+    public class About_ModelValidationAttributes
 	{
 
 		public class LengthAttributeTests
