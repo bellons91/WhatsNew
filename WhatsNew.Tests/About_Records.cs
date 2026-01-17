@@ -1,7 +1,6 @@
 namespace WhatsNew.Tests
 {
     //https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/records
-    [IncludeRandomSelection("Records data type")]
     public class About_Records
     {
         public record User(int Id, string Name);
